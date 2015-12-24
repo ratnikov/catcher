@@ -1,0 +1,3 @@
+[submodule "libraries/Makeblock-Library"]
+	path = libraries/Makeblock-Library
+	url = https://github.com/Makeblock-official/Makeblock-Library.git
