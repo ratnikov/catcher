@@ -16,3 +16,13 @@ void moveStop() {
   front.stop();
   rear.stop();
 }
+
+void turnRight(int power) {
+  front.run(power);
+  rear.run(power);
+}
+
+void turnLeft(int power) {
+  front.run(-power);
+  rear.run(-power);
+}

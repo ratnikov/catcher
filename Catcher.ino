@@ -8,6 +8,7 @@
 #define KEY_RIGHT 'l'
 #define KEY_POWERUP 'p'
 #define KEY_POWERDOWN 'o'
+#define KEY_STOP 's'
 
 void beep() {
   buzzerOn();
@@ -41,11 +42,19 @@ void loop() {
     switch (c) {
     case KEY_UP:
       moveForward(kPower);
-      delay(500);
+      delay(50);
       break;
     case KEY_DOWN:
       moveBack(kPower);
-      delay(500);
+      delay(50);
+      break;
+    case KEY_LEFT:
+      turnLeft(kPower);
+      delay(50);
+      break;
+    case KEY_RIGHT:
+      turnRight(kPower);
+      delay(50);
       break;
     case KEY_POWERUP:
       kPower += 10;
@@ -61,11 +70,13 @@ void loop() {
       }
       printPower();
       break;
+    case KEY_STOP:
+      moveStop();
+      break;
     default:
       Serial.print("Unsupported key... Power: ");
       Serial.println(kPower);
     }
   } else {
-    Serial.println("Nothing on bluetooth");
   }
 }
